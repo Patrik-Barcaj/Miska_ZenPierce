@@ -1,0 +1,92 @@
+/* Custom carousel styles */
+.gallery-carousel .slick-slider,
+.reviews-carousel .slick-slider {
+  position: relative;
+}
+
+.gallery-carousel .slick-list,
+.reviews-carousel .slick-list {
+  overflow: hidden;
+  margin: 0;
+}
+
+.gallery-carousel .slick-track,
+.reviews-carousel .slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.gallery-carousel .slick-slide,
+.reviews-carousel .slick-slide {
+  float: none;
+  height: auto;
+}
+
+.gallery-carousel .slick-slide > div,
+.reviews-carousel .slick-slide > div {
+  height: 100%;
+}
+
+/* Custom dots styling */
+.gallery-carousel .slick-dots,
+.reviews-carousel .slick-dots {
+  position: relative;
+  bottom: 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin-top: 20px;
+  list-style: none;
+}
+
+.gallery-carousel .slick-dots li,
+.reviews-carousel .slick-dots li {
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.gallery-carousel .slick-dots li button,
+.reviews-carousel .slick-dots li button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #d1d5db;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-carousel .slick-dots li button:before,
+.reviews-carousel .slick-dots li button:before {
+  content: none;
+}
+
+.gallery-carousel .slick-dots li.slick-active button,
+.reviews-carousel .slick-dots li.slick-active button {
+  background: #4A5D4E;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Hide scrollbars */
+.gallery-carousel,
+.reviews-carousel {
+  overflow: hidden;
+}
+
+.gallery-carousel *::-webkit-scrollbar,
+.reviews-carousel *::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-carousel *,
+.reviews-carousel * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,1 +1,11 @@
-# repo-template
+
+  # AcuPierce
+
+  This is a code bundle for AcuPierce. The original project is available at https://www.figma.com/design/LW6P0nd5R9tbg4MFYuwZcD/AcuPierce.
+
+  ## Running the code
+
+  Run `npm i` to install the dependencies.
+
+  Run `npm run dev` to start the development server.
+  
