@@ -30,7 +30,7 @@ export function Reviews() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-white">
+    <section id="reviews" className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <h2
           className="text-4xl md:text-5xl mb-4 text-center text-[#2D2D2D]"

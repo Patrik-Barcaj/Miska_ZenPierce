@@ -6,7 +6,7 @@ interface HeroProps {
 
 export function Hero({ onBookingClick }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#F5F5F5] overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-[#F5F5F5] overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
