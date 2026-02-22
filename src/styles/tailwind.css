@@ -1,4 +1,4 @@
-@import 'tailwindcss' source(none);
-@source '../**/*.{js,ts,jsx,tsx}';
+@import 'tailwindcss' source(none); /* Importing base Tailwind layers */
+@source '../**/*.{js,ts,jsx,tsx}'; /* Specifying content paths for Tailwind processing */
 
-@import 'tw-animate-css';
+@import 'tw-animate-css'; /* Importing animation utilities */

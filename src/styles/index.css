@@ -1,4 +1,4 @@
-@import './fonts.css';
-@import './tailwind.css';
-@import './theme.css';
-@import './carousel.css';
+@import "./fonts.css"; /* Importing external fonts */
+@import "./tailwind.css"; /* Importing tailwind directives */
+@import "./theme.css"; /* Importing theme variables and base styles */
+@import "./carousel.css"; /* Importing 3D carousel specific styles */
