@@ -1,92 +1,92 @@
-/* Custom carousel styles for Gallery and Reviews components */
-.gallery-carousel .slick-slider, /* targeting the root slick container */
-.reviews-carousel .slick-slider { /* targeting reviews slider */
-  position: relative; /* ensuring child positioning context */
+/* Custom carousel styles */
+.gallery-carousel .slick-slider,
+.reviews-carousel .slick-slider {
+  position: relative;
 }
 
-.gallery-carousel .slick-list, /* the visible viewpoint of the slider */
-.reviews-carousel .slick-list { /* viewport for reviews */
-  overflow: hidden; /* clipping overflowed slides */
-  margin: 0; /* resetting default margins */
+.gallery-carousel .slick-list,
+.reviews-carousel .slick-list {
+  overflow: hidden;
+  margin: 0;
 }
 
-.gallery-carousel .slick-track, /* the horizontal container for slides */
-.reviews-carousel .slick-track { /* track for reviews */
-  display: flex; /* horizontal alignment of slides */
-  align-items: stretch; /* ensuring equal height slides */
+.gallery-carousel .slick-track,
+.reviews-carousel .slick-track {
+  display: flex;
+  align-items: stretch;
 }
 
-.gallery-carousel .slick-slide, /* individual slide container */
-.reviews-carousel .slick-slide { /* slide for reviews */
-  float: none; /* overriding old float-based slick layouts */
-  height: auto; /* allowing height to be set by content */
+.gallery-carousel .slick-slide,
+.reviews-carousel .slick-slide {
+  float: none;
+  height: auto;
 }
 
-.gallery-carousel .slick-slide > div, /* inner slick wrapper */
-.reviews-carousel .slick-slide > div { /* inner wrapper for reviews */
-  height: 100%; /* expanding to fill slide container */
+.gallery-carousel .slick-slide > div,
+.reviews-carousel .slick-slide > div {
+  height: 100%;
 }
 
-/* Custom dots navigation styling */
-.gallery-carousel .slick-dots, /* the dots container */
-.reviews-carousel .slick-dots { /* dots for reviews */
-  position: relative; /* specific placement below the track */
-  bottom: 0; /* alignment at the base */
-  display: flex !important; /* using flex layout instead of default */
-  justify-content: center; /* centering dots horizontally */
-  align-items: center; /* centering dots vertically */
-  gap: 8px; /* spacing between dots */
-  padding: 0; /* resetting padding */
-  margin-top: 20px; /* gap from the carousel content */
-  list-style: none; /* removing list bullets */
+/* Custom dots styling */
+.gallery-carousel .slick-dots,
+.reviews-carousel .slick-dots {
+  position: relative;
+  bottom: 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin-top: 20px;
+  list-style: none;
 }
 
-.gallery-carousel .slick-dots li, /* individual dot wrapper */
-.reviews-carousel .slick-dots li { /* dot wrapper for reviews */
-  margin: 0; /* resetting margin */
-  width: auto; /* width dictated by child button */
-  height: auto; /* height dictated by child button */
+.gallery-carousel .slick-dots li,
+.reviews-carousel .slick-dots li {
+  margin: 0;
+  width: auto;
+  height: auto;
 }
 
-.gallery-carousel .slick-dots li button, /* the technical clickable button element */
-.reviews-carousel .slick-dots li button { /* button for reviews */
-  width: 8px; /* default diameter */
-  height: 8px; /* default diameter */
-  padding: 0; /* resetting padding */
-  border: none; /* removal of default borders */
-  border-radius: 50%; /* circular shape */
-  background: #d1d5db; /* neutral gray for inactive states */
-  font-size: 0; /* hiding text content */
-  line-height: 0; /* resetting line height */
-  cursor: pointer; /* interactive cursor */
-  transition: all 0.3s ease; /* smooth transition for active state */
+.gallery-carousel .slick-dots li button,
+.reviews-carousel .slick-dots li button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #d1d5db;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.gallery-carousel .slick-dots li button:before, /* removing default slick icon content */
-.reviews-carousel .slick-dots li button:before { /* removal for reviews */
-  content: none; /* ensuring no text/icon shows */
+.gallery-carousel .slick-dots li button:before,
+.reviews-carousel .slick-dots li button:before {
+  content: none;
 }
 
-.gallery-carousel .slick-dots li.slick-active button, /* active state styling */
-.reviews-carousel .slick-dots li.slick-active button { /* active for reviews */
-  background: #4A5D4E; /* using primary brand color for emphasis */
-  width: 24px; /* elongated "pill" shape for active indicator */
-  border-radius: 4px; /* softening the pill corners */
+.gallery-carousel .slick-dots li.slick-active button,
+.reviews-carousel .slick-dots li.slick-active button {
+  background: #4A5D4E;
+  width: 24px;
+  border-radius: 4px;
 }
 
-/* Scrollbar management */
-.gallery-carousel, /* root container */
-.reviews-carousel { /* reviews root */
-  overflow: hidden; /* safety clip */
+/* Hide scrollbars */
+.gallery-carousel,
+.reviews-carousel {
+  overflow: hidden;
 }
 
-.gallery-carousel *::-webkit-scrollbar, /* webkit scrollbar removal */
-.reviews-carousel *::-webkit-scrollbar { /* removal for reviews */
-  display: none; /* fully hidden */
+.gallery-carousel *::-webkit-scrollbar,
+.reviews-carousel *::-webkit-scrollbar {
+  display: none;
 }
 
-.gallery-carousel *, /* universal reset for slider children */
-.reviews-carousel * { /* reset for reviews children */
-  -ms-overflow-style: none; /* IE/Edge scrollbar removal */
-  scrollbar-width: none; /* Firefox scrollbar removal */
+.gallery-carousel *,
+.reviews-carousel * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

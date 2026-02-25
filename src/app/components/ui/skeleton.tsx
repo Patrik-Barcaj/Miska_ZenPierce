@@ -1,13 +1,13 @@
-import { cn } from "./utils"; // Importing utility for conditional class merging
+import { cn } from "./utils";
 
-function Skeleton({ className, ...props }: React.ComponentProps<"div">) { // Visual placeholder for loading states
-  return ( // Returning stylized div
-    <div // standard div tag
-      data-slot="skeleton" // identifier
-      className={cn("bg-accent animate-pulse rounded-md", className)} // pulsing animation and accent color
-      {...props} // spreading props
-    /> // closing tag
-  ); // closing return
-} // Closing Skeleton block
+function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="skeleton"
+      className={cn("bg-accent animate-pulse rounded-md", className)}
+      {...props}
+    />
+  );
+}
 
-export { Skeleton }; // Exporting component
+export { Skeleton };

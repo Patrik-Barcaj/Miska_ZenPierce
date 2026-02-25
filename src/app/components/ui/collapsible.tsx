@@ -1,33 +1,33 @@
-"use client"; // Indicating this is a client-side component for handling collapse/expand state
+"use client";
 
-import * as CollapsiblePrimitive from "@radix-ui/react-collapsible"; // Importing Radix UI Collapsible primitives
+import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
 
-function Collapsible({ // Main coordination component for collapsible content
-  ...props // spreading props
-}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) { // TS type definition from Radix
-  return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />; // Rendering the functional root provider
-} // Closing Collapsible component block
+function Collapsible({
+  ...props
+}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {
+  return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />;
+}
 
-function CollapsibleTrigger({ // Component that toggles the open state
-  ...props // spreading props
-}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) { // TS type definition
-  return ( // Returning functional trigger
-    <CollapsiblePrimitive.CollapsibleTrigger // Radix Trigger primitive
-      data-slot="collapsible-trigger" // identifier
-      {...props} // spreading props
-    /> // closing tag
-  ); // closing return
-} // Closing CollapsibleTrigger component block
+function CollapsibleTrigger({
+  ...props
+}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {
+  return (
+    <CollapsiblePrimitive.CollapsibleTrigger
+      data-slot="collapsible-trigger"
+      {...props}
+    />
+  );
+}
 
-function CollapsibleContent({ // Component for the content that appears/disappears
-  ...props // spreading props
-}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) { // TS type definition
-  return ( // Returning toggleable content
-    <CollapsiblePrimitive.CollapsibleContent // Radix Content primitive
-      data-slot="collapsible-content" // identifier
-      {...props} // spreading props
-    /> // closing tag
-  ); // closing return
-} // Closing CollapsibleContent component block
+function CollapsibleContent({
+  ...props
+}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {
+  return (
+    <CollapsiblePrimitive.CollapsibleContent
+      data-slot="collapsible-content"
+      {...props}
+    />
+  );
+}
 
-export { Collapsible, CollapsibleTrigger, CollapsibleContent }; // Exporting coordinated components
+export { Collapsible, CollapsibleTrigger, CollapsibleContent };

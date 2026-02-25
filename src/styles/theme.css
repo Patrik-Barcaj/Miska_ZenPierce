@@ -1,182 +1,181 @@
-@custom-variant dark (&:is(.dark *)); /* Defining custom selector for dark mode */
+@custom-variant dark (&:is(.dark *));
 
-:root { /* Defining global light theme variables */
-  --font-size: 16px; /* Base typography size */
-  --background: #ffffff; /* Page background color */
-  --foreground: #2d2d2d; /* Primary text color */
-  --card: #ffffff; /* Card component background */
-  --card-foreground: #2d2d2d; /* Card component text */
-  --popover: #ffffff; /* Popover/dropdown background */
-  --popover-foreground: #2d2d2d; /* Popover/dropdown text */
-  --primary: #4a5d4e; /* Brand primary color (Olive Green) */
-  --primary-foreground: #ffffff; /* Text on primary background */
-  --secondary: #f5f5f5; /* Support/offset color */
-  --secondary-foreground: #2d2d2d; /* Text on secondary background */
-  --muted: #f5f5f5; /* De-emphasized background */
-  --muted-foreground: #717182; /* Subtle text color */
-  --accent: #f5f5f5; /* Interactive hover highlights */
-  --accent-foreground: #2d2d2d; /* Text on accent background */
-  --destructive: #d4183d; /* Error/Danger color */
-  --destructive-foreground: #ffffff; /* Text on destructive background */
-  --border: rgba(0, 0, 0, 0.1); /* Subtle divider color */
-  --input: transparent; /* Input border color */
-  --input-background: #f5f5f5; /* Input filling color */
-  --switch-background: #cbced4; /* Toggle switch track color */
-  --font-weight-medium: 500; /* Medium font weight token */
-  --font-weight-normal: 400; /* Normal font weight token */
-  --ring: #4a5d4e; /* Focus ring color */
-  --chart-1: oklch(0.646 0.222 41.116); /* Chart color 1 */
-  --chart-2: oklch(0.6 0.118 184.704); /* Chart color 2 */
-  --chart-3: oklch(0.398 0.07 227.392); /* Chart color 3 */
-  --chart-4: oklch(0.828 0.189 84.429); /* Chart color 4 */
-  --chart-5: oklch(0.769 0.188 70.08); /* Chart color 5 */
-  --radius: 0.625rem; /* Base border radius token */
-  --sidebar: oklch(0.985 0 0); /* Sidebar background */
-  --sidebar-foreground: oklch(0.145 0 0); /* Sidebar text */
-  --sidebar-primary: #4a5d4e; /* Sidebar primary action color */
-  --sidebar-primary-foreground: #ffffff; /* Text on sidebar primary */
-  --sidebar-accent: #f5f5f5; /* Sidebar item hover */
-  --sidebar-accent-foreground: #2d2d2d; /* Text on sidebar accent */
-  --sidebar-border: oklch(0.922 0 0); /* Sidebar divider */
-  --sidebar-ring: #4a5d4e; /* Sidebar focus ring */
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: #2D2D2D;
+  --card: #ffffff;
+  --card-foreground: #2D2D2D;
+  --popover: #ffffff;
+  --popover-foreground: #2D2D2D;
+  --primary: #4A5D4E;
+  --primary-foreground: #ffffff;
+  --secondary: #F5F5F5;
+  --secondary-foreground: #2D2D2D;
+  --muted: #F5F5F5;
+  --muted-foreground: #717182;
+  --accent: #F5F5F5;
+  --accent-foreground: #2D2D2D;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #F5F5F5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #4A5D4E;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #4A5D4E;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: #2D2D2D;
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: #4A5D4E;
 }
 
-.dark { /* Defining dark mode variable overrides */
-  --background: oklch(0.145 0 0); /* Darker background */
-  --foreground: oklch(0.985 0 0); /* Lighter text for contrast */
-  --card: oklch(0.145 0 0); /* Card background in dark mode */
-  --card-foreground: oklch(0.985 0 0); /* Text on dark cards */
-  --popover: oklch(0.145 0 0); /* Popover background in dark mode */
-  --popover-foreground: oklch(0.985 0 0); /* Text on dark popovers */
-  --primary: oklch(0.985 0 0); /* Brighter primary for dark mode */
-  --primary-foreground: oklch(0.205 0 0); /* Dark text on bright primary */
-  --secondary: oklch(0.269 0 0); /* Secondary surface in dark mode */
-  --secondary-foreground: oklch(0.985 0 0); /* Text on dark secondary surfaces */
-  --muted: oklch(0.269 0 0); /* Muted surface in dark mode */
-  --muted-foreground: oklch(0.708 0 0); /* Subtle text in dark mode */
-  --accent: oklch(0.269 0 0); /* Accent surface in dark mode */
-  --accent-foreground: oklch(0.985 0 0); /* Text on dark accent surfaces */
-  --destructive: oklch(0.396 0.141 25.723); /* Danger color for dark mode */
-  --destructive-foreground: oklch(0.637 0.237 25.331); /* Text on dark destructive background */
-  --border: oklch(0.269 0 0); /* Dark mode border color */
-  --input: oklch(0.269 0 0); /* Dark mode input border */
-  --ring: oklch(0.439 0 0); /* Dark mode focus ring */
-  --font-weight-medium: 500; /* Re-declaring weights for consistency */
-  --font-weight-normal: 400; /* Re-declaring weights for consistency */
-  --chart-1: oklch(0.488 0.243 264.376); /* Dark mode chart color 1 */
-  --chart-2: oklch(0.696 0.17 162.48); /* Dark mode chart color 2 */
-  --chart-3: oklch(0.769 0.188 70.08); /* Dark mode chart color 3 */
-  --chart-4: oklch(0.627 0.265 303.9); /* Dark mode chart color 4 */
-  --chart-5: oklch(0.645 0.246 16.439); /* Dark mode chart color 5 */
-  --sidebar: oklch(0.205 0 0); /* Sidebar background in dark mode */
-  --sidebar-foreground: oklch(0.985 0 0); /* Sidebar text in dark mode */
-  --sidebar-primary: oklch(0.488 0.243 264.376); /* Sidebar primary action in dark mode */
-  --sidebar-primary-foreground: oklch(0.985 0 0); /* Text on sidebar primary in dark mode */
-  --sidebar-accent: oklch(0.269 0 0); /* Sidebar item hover in dark mode */
-  --sidebar-accent-foreground: oklch(0.985 0 0); /* Text on sidebar accent in dark mode */
-  --sidebar-border: oklch(0.269 0 0); /* Sidebar divider in dark mode */
-  --sidebar-ring: oklch(0.439 0 0); /* Sidebar focus ring in dark mode */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
-@theme inline { /* Mapping design tokens to active CSS variables */
-  --color-background: var(--background); /* active background color */
-  --color-foreground: var(--foreground); /* active text color */
-  --color-card: var(--card); /* active card background */
-  --color-card-foreground: var(--card-foreground); /* active card text */
-  --color-popover: var(--popover); /* active popover background */
-  --color-popover-foreground: var(--popover-foreground); /* active popover text */
-  --color-primary: var(--primary); /* active brand color */
-  --color-primary-foreground: var(--primary-foreground); /* active text on brand color */
-  --color-secondary: var(--secondary); /* active support surface */
-  --color-secondary-foreground: var(--secondary-foreground); /* active text on support surface */
-  --color-muted: var(--muted); /* active muted surface */
-  --color-muted-foreground: var(--muted-foreground); /* active subtle text */
-  --color-accent: var(--accent); /* active interactive surface */
-  --color-accent-foreground: var(--accent-foreground); /* active text on interactive surface */
-  --color-destructive: var(--destructive); /* active danger color */
-  --color-destructive-foreground: var(--destructive-foreground); /* active text on danger color */
-  --color-border: var(--border); /* active divider color */
-  --color-input: var(--input); /* active input focus color */
-  --color-input-background: var(--input-background); /* active input surface color */
-  --color-switch-background: var(--switch-background); /* active toggle tracking color */
-  --color-ring: var(--ring); /* active ring effect color */
-  --color-chart-1: var(--chart-1); /* active chart color 1 */
-  --color-chart-2: var(--chart-2); /* active chart color 2 */
-  --color-chart-3: var(--chart-3); /* active chart color 3 */
-  --color-chart-4: var(--chart-4); /* active chart color 4 */
-  --color-chart-5: var(--chart-5); /* active chart color 5 */
-  --radius-sm: calc(var(--radius) - 4px); /* mapping small radius token */
-  --radius-md: calc(var(--radius) - 2px); /* mapping medium radius token */
-  --radius-lg: var(--radius); /* mapping large radius token */
-  --radius-xl: calc(var(--radius) + 4px); /* mapping extra large radius token */
-  --color-sidebar: var(--sidebar); /* mapping sidebar background */
-  --color-sidebar-foreground: var(--sidebar-foreground); /* mapping sidebar text */
-  --color-sidebar-primary: var(--sidebar-primary); /* mapping sidebar primary action */
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground); /* mapping sidebar primary text */
-  --color-sidebar-accent: var(--sidebar-accent); /* mapping sidebar interaction color */
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground); /* mapping sidebar interaction text */
-  --color-sidebar-border: var(--sidebar-border); /* mapping sidebar division */
-  --color-sidebar-ring: var(--sidebar-ring); /* mapping sidebar focus decoration */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@layer base { /* Defining core HTML element resets and defaults */
-  * { /* global selector */
-    @apply border-border outline-ring/50; /* applying default border style and focus ring decoration */
-  } /* closing selector */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
 
-  body { /* the whole document body */
-    @apply bg-background text-foreground; /* linking body background and text to theme variables */
-  } /* closing body */
+  body {
+    @apply bg-background text-foreground;
+  }
 
   /**
   * Default typography styles for HTML elements (h1-h4, p, label, button, input).
   * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
   */
 
-  html { /* root document element */
-    font-size: var(--font-size); /* applying base typography size */
-  } /* closing html */
+  html {
+    font-size: var(--font-size);
+  }
 
-  h1 { /* main title */
-    font-size: var(--text-2xl); /* using theme standard for large titles */
-    font-weight: var(--font-weight-medium); /* emphasis through weight */
-    line-height: 1.5; /* increased readability */
-  } /* closing h1 */
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-  h2 { /* sectional indicator */
-    font-size: var(--text-xl); /* using theme standard for section labels */
-    font-weight: var(--font-weight-medium); /* emphasis through weight */
-    line-height: 1.5; /* increased readability */
-  } /* closing h2 */
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-  h3 { /* sub-sectional label */
-    font-size: var(--text-lg); /* using theme standard for sub-labels */
-    font-weight: var(--font-weight-medium); /* emphasis through weight */
-    line-height: 1.5; /* increased readability */
-  } /* closing h3 */
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-  h4 { /* minor header */
-    font-size: var(--text-base); /* using theme standard for minor headers */
-    font-weight: var(--font-weight-medium); /* emphasis through weight */
-    line-height: 1.5; /* increased readability */
-  } /* closing h4 */
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-  label { /* form labels */
-    font-size: var(--text-base); /* using theme standard for descriptive text */
-    font-weight: var(--font-weight-medium); /* emphasis through weight */
-    line-height: 1.5; /* increased readability */
-  } /* closing label */
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-  button { /* interactive action elements */
-    font-size: var(--text-base); /* using theme standard for interactive elements */
-    font-weight: var(--font-weight-medium); /* emphasis through weight */
-    line-height: 1.5; /* increased readability */
-    cursor: pointer; /* visual feedback of interactivity */
-  } /* closing button */
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-  input { /* interactive text inputs */
-    font-size: var(--text-base); /* using theme standard for user inputs */
-    font-weight: var(--font-weight-normal); /* standard weight for data entry */
-    line-height: 1.5; /* increased readability */
-  } /* closing input */
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
 }
