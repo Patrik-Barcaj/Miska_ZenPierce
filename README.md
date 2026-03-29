@@ -1,7 +1,7 @@
 
-  # AcuPierce
+  # Zen Piercing
 
-  This is a code bundle for AcuPierce. The original project is available at https://www.figma.com/design/LW6P0nd5R9tbg4MFYuwZcD/AcuPierce.
+  This is a code bundle for Zen Piercing. The original project is available at https://www.figma.com/design/LW6P0nd5R9tbg4MFYuwZcD/AcuPierce.
 
   ## Running the code
 
