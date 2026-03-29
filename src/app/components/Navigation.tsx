@@ -1,5 +1,5 @@
-// Import useState and useEffect hooks from React for scroll and menu state handling
-import { useState, useEffect } from 'react';
+// Import useState hook from React for menu state handling
+import { useState } from 'react';
 // Import icons from lucide-react for booking button and mobile menu toggles
 import { Calendar, Menu, X } from 'lucide-react';
 // Import framer-motion dependencies for smooth dropdown animations
@@ -14,37 +14,15 @@ interface NavigationProps {
 
 // Export the Navigation component which accepts the onBookingClick prop
 export function Navigation({ onBookingClick }: NavigationProps) {
-  // Initialize state variable isScrolled to track page scroll status
-  const [isScrolled, setIsScrolled] = useState(false);
   // Initialize state variable isMobileMenuOpen to track hamburger dropdown status
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Set up an effect to react to browser scroll events
-  useEffect(() => {
-    // Define a handler callback for handling the underlying scroll event
-    const handleScroll = () => {
-      // If window is scrolled down more than 20 pixels, set isScrolled to true
-      setIsScrolled(window.scrollY > 20);
-      // Close the handleScroll definition
-    };
-
-    // Attach the scroll event listener to the browser window
-    window.addEventListener('scroll', handleScroll);
-    // Return a cleanup function to remove the listener on component unmount
-    return () => window.removeEventListener('scroll', handleScroll);
-    // Pass an empty dependency array so the effect only runs on mount
-  }, []);
 
   // Return the JSX representing the navigation structure
   return (
     // Render an HTML nav tag positioned at top left and applying transitions
     <nav
-      // Apply base styles and conditionally apply backdrop behavior if scrolled
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        // If window is scrolled apply blur shadow, otherwise apply transparent
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
-        // Close the template literal generating classNames
-        }`}
+      // Apply base styles forcing permanent white background shadow visibility
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm"
     >
       {/* Container to restrict layout sizing and centered layout with responsive padding */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
@@ -71,8 +49,8 @@ export function Navigation({ onBookingClick }: NavigationProps) {
           <a
             // Hyperlink reference to element ID
             href="#o-zakroku"
-            // CSS text styling and hover transitions applying dynamic scroll colors
-            className={`transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 ${isScrolled ? 'text-[#2D2D2D]' : 'text-white'}`}
+            // CSS text styling statically dark formatting
+            className="transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 text-[#2D2D2D]"
             // Inline typography declaration
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
@@ -84,8 +62,8 @@ export function Navigation({ onBookingClick }: NavigationProps) {
           <a
             // Hyperlink reference to element ID
             href="#cennik"
-            // CSS text styling and hover transitions applying dynamic scroll colors
-            className={`transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 ${isScrolled ? 'text-[#2D2D2D]' : 'text-white'}`}
+            // CSS text styling statically dark formatting
+            className="transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 text-[#2D2D2D]"
             // Inline typography declaration
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
@@ -97,8 +75,8 @@ export function Navigation({ onBookingClick }: NavigationProps) {
           <a
             // Hyperlink reference to element ID
             href="#galeria"
-            // CSS text styling and hover transitions applying dynamic scroll colors
-            className={`transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 ${isScrolled ? 'text-[#2D2D2D]' : 'text-white'}`}
+            // CSS text styling statically dark formatting
+            className="transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 text-[#2D2D2D]"
             // Inline typography declaration
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
@@ -110,8 +88,8 @@ export function Navigation({ onBookingClick }: NavigationProps) {
           <a
             // Hyperlink reference to element ID
             href="#recenzie"
-            // CSS text styling and hover transitions applying dynamic scroll colors
-            className={`transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 ${isScrolled ? 'text-[#2D2D2D]' : 'text-white'}`}
+            // CSS text styling statically dark formatting
+            className="transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 text-[#2D2D2D]"
             // Inline typography declaration
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
@@ -123,8 +101,8 @@ export function Navigation({ onBookingClick }: NavigationProps) {
           <a
             // Hyperlink reference to element ID
             href="#faq"
-            // CSS text styling and hover transitions applying dynamic scroll colors
-            className={`transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 ${isScrolled ? 'text-[#2D2D2D]' : 'text-white'}`}
+            // CSS text styling statically dark formatting
+            className="transition-all text-sm font-medium hover:underline underline-offset-4 decoration-2 text-[#2D2D2D]"
             // Inline typography declaration
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
