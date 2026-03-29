@@ -4,25 +4,29 @@ import { motion, AnimatePresence } from 'framer-motion'; // Importing components
 //
 const faqs = [// Defining an constant array of FAQ data objects
   { // Start object for the first FAQ item
-    question: 'Je akupunktúrny piercing bolestivý?', // Question text in Slovak: "Is acupuncture piercing painful?"
-    answer: 'Väčšina klientov pociťuje len krátke uštipnutie pri aplikácii. Po zákroku môže byť ucho pár hodín citlivé, ale nejde o intenzívnu bolesť.' // Answer text in Slovak
+    question: 'Je Zen Piercing liečba?', // Question text defining nature of therapy
+    answer: 'Nie. Ide o doplnkovú metódu podpory rovnováhy tela. Nenahrádza lekársku starostlivosť.' // Answer literal text
   }, // Closing first FAQ object
   { // Start object for the second FAQ item
-    question: 'Kedy pocítim prvé účinky?', // Question text in Slovak: "When will I feel first effects?"
-    answer: 'Individuálne. Niektorí klienti pociťujú úľavu takmer okamžite, u iných sa účinok dostaví po 2-3 týždňoch od aplikácie.' // Answer text in Slovak
+    question: 'Ako rýchlo sa prejavia účinky?', // Question text regarding onset time
+    answer: 'U niektorých klientov okamžite, u iných postupne počas dní, týždňov až mesiacov.' // Answer literal text
   }, // Closing second FAQ object
   { // Start object for the third FAQ item
-    question: 'Ako sa mám o piercing starať?', // Question text in Slovak: "How to take care of piercing?"
-    answer: 'Dôležitá je hygiena. Odporúčame čistiť fyziologickým roztokom 2x denne, vyhnúť sa spaniu na danej strane aspoň 2 týždne a nechytať piercing špinavými rukami.' // Answer text in Slovak
+    question: 'Je zákrok bolestivý?', // Question text regarding pain level
+    answer: 'Väčšina ľudí cíti len mierny tlak alebo citlivosť na určitých bodoch. Terapia je vo všeobecnosti považovaná za veľmi jemnú a dobre tolerovanú.' // Answer literal text
   }, // Closing third FAQ object
   { // Start object for the fourth FAQ item
-    question: 'Môžem mať viac piercingov naraz?', // Question text in Slovak: "Can I have multiple piercings?"
-    answer: 'Áno, je to možné. Odporúčame však začať jedným, aby sme vedeli presne vyhodnotiť jeho účinok na vaše symptómy.' // Answer text in Slovak
+    question: 'Môže ho mať každý?', // Question text regarding eligibility constraints
+    answer: 'Nie je vhodný pri niektorých zdravotných stavoch – všetko riešime individuálne počas konzultácie.' // Answer literal text
   }, // Closing fourth FAQ object
   { // Start object for the fifth FAQ item
-    question: 'Čo ak sa mi bod nepodarí trafiť?', // Question text in Slovak: "What if the point isn't reached?"
-    answer: 'Používame špeciálne pero na lokalizáciu akupunktúrneho bodu, ktoré meria kožný odpor. To nám zaručuje vysokú presnosť aplikácie.' // Answer text in Slovak
-  } // Closing fifth FAQ object
+    question: 'Ako dlho piercing zostáva?', // Question text regarding duration
+    answer: 'Podľa reakcie tela – môže ísť o mesiace aj dlhodobo.' // Answer literal text
+  }, // Closing fifth FAQ object
+  { // Start object for the sixth FAQ item
+    question: 'Môžem ho kombinovať s inou liečbou?', // Question text regarding combinatorial therapies
+    answer: 'Áno, Zen Piercing je doplnková metóda.' // Answer literal text
+  } // Closing sixth FAQ object
 ]; // Closing the faqs array
 //
 export function FAQ() {// Exporting the FAQ functional component

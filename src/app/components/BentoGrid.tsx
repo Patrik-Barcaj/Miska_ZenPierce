@@ -1,7 +1,7 @@
 // Import useState from React for managing selected accordion item state
 import { useState } from 'react';
 // Import necessary icons from lucide-react package including Plus and Minus
-import { Brain, Users, Clipboard, Heart, Plus, Minus } from 'lucide-react';
+import { Brain, Users, Clipboard, Heart, Plus, Minus, Sparkles } from 'lucide-react';
 // Import framer-motion components for smooth expansion animations
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -9,7 +9,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 export function BentoGrid() {
   // Initialize state to track which mobile accordion item is currently open
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
+  // State for toggling the open/closed status of the FUN FACT callout block
+  const [isFunFactOpen, setIsFunFactOpen] = useState<boolean>(false);
 
   // Define an array of objects representing the features grid
   const cards = [
@@ -47,10 +48,28 @@ export function BentoGrid() {
       icon: Clipboard,
       // Title text for this feature
       title: 'AKO PREBIEHA APLIKÁCIA',
-      // Detailed description text for this feature
-      description:
-        // Description paragraph text
-        '1. Konzultácia a zhodnotenie stavu 2. Výber vhodného bodu 3. Výber šperku podľa preferencií a veľkosti 4. Dezinfekcia a príprava 5. Aplikácia piercingu 6. Inštrukcie k starostlivosti 🕒 Trvanie: 20–30 minút',
+      // Detailed description text for this feature defined as JSX to ensure strict visual line breaks
+      description: (
+        // Fragment container grouping multiple lines
+        <>
+          {/* Item 1 */}
+          1. Konzultácia a zhodnotenie stavu<br />
+          {/* Item 2 */}
+          2. Výber vhodného bodu<br />
+          {/* Item 3 */}
+          3. Výber šperku podľa preferencií a veľkosti<br />
+          {/* Item 4 */}
+          4. Dezinfekcia a príprava<br />
+          {/* Item 5 */}
+          5. Aplikácia piercingu<br />
+          {/* Item 6 */}
+          6. Inštrukcie k starostlivosti<br />
+          {/* Duration info */}
+          🕒 Trvanie: 20–30 minút
+          {/* Close fragment */}
+        </>
+        // Close JSX definition
+      ),
       // CSS classes for responsive grid placement adjusting spans across mobile, tablet, and desktop
       className: 'sm:col-span-1 lg:col-span-1',
       // End third feature card
@@ -61,10 +80,24 @@ export function BentoGrid() {
       icon: Heart,
       // Title text for this feature
       title: 'STAROSTLIVOSŤ PO APLIKÁCII',
-      // Detailed description text for this feature
-      description:
-        // Description paragraph text
-        '* pravidelné čistenie * vyhýbanie sa tlaku  * dodržiavanie hygieny * kontrola pri potrebe *Správna starostlivosť podporuje účinok aj hojenie.',
+      // Detailed description text for this feature defined as JSX to ensure strict visual line breaks
+      description: (
+        // Fragment container grouping multiple lines
+        <>
+          {/* Item 1 */}
+          * pravidelné čistenie<br />
+          {/* Item 2 */}
+          * vyhýbanie sa tlaku<br />
+          {/* Item 3 */}
+          * dodržiavanie hygieny<br />
+          {/* Item 4 */}
+          * kontrola pri potrebe<br />
+          {/* Summary info */}
+          * Správna starostlivosť podporuje účinok aj hojenie.
+          {/* Close fragment */}
+        </>
+        // Close JSX definition
+      ),
       // CSS classes for responsive grid placement adjusting spans across mobile, tablet, and desktop
       className: 'sm:col-span-2 lg:col-span-1',
       // End fourth feature card
@@ -262,16 +295,122 @@ export function BentoGrid() {
                 </AnimatePresence>
                 {/* Close root card motion division element */}
               </motion.div>
-              // End return statement rendering components
             );
             // End callback executed against every cards entries
           })}
           {/* Close mobile block wrapper rendering array results */}
         </div>
 
+        {/* FUN FACT static section breaking the grid layout */}
+        <motion.div
+          // Add a fade in animation for the fun fact section
+          initial={{ opacity: 0, y: 20 }}
+          // Trigger on view
+          whileInView={{ opacity: 1, y: 0 }}
+          // Only trigger once
+          viewport={{ once: true }}
+          // Staggered delay for sequenced flow
+          transition={{ duration: 0.5, delay: 0.2 }}
+          // Styling the FUN FACT block with primary color and white text for contrast, hidden overflow for accordion transition
+          className="mt-6 sm:mt-10 bg-[#4A5D4E] text-white rounded-2xl shadow-md w-full overflow-hidden"
+        >
+          {/* Interactive clickable button expanding isolating the title area from the text content */}
+          <button
+            // State hook toggling value boolean
+            onClick={() => setIsFunFactOpen(!isFunFactOpen)}
+            // Full width rendering of interactive headers
+            className="w-full py-4 px-6 md:py-5 md:px-8 flex flex-row items-center justify-between text-left focus:outline-none hover:bg-white/5 transition-colors"
+          >
+            {/* Flex container grouping icon and text title */}
+            <div className="flex flex-row items-center gap-4 w-full pr-4">
+              {/* Icon container hidden natively on mobile via tailwind sm breakpoint */}
+              <div className="hidden sm:block bg-white/20 p-3 rounded-full flex-shrink-0">
+                {/* Sparkles icon */}
+                <Sparkles className="w-7 h-7 text-white" />
+                {/* Close icon div */}
+              </div>
+              {/* Title styling container */}
+              <h3
+                // Title layout and size matching standard components
+                className="text-2xl font-medium"
+                // Custom font for titles
+                style={{ fontFamily: 'Playfair Display, serif' }}
+              >
+                {/* Title text */}
+                FUN FACT: Vedeli ste, že ucho je mapa celého tela?
+                {/* Close title */}
+              </h3>
+              {/* Close flex block grouping icon and title */}
+            </div>
+            
+            {/* Expansion indicator animated icon container */}
+            <motion.div
+              // Rotate icon upon state truthy evaluation
+              animate={{ rotate: isFunFactOpen ? 180 : 0 }}
+              // Smooth eased curve rotation parameters
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              // Alignment placing it perfectly horizontally opposite title
+              className="flex-shrink-0"
+            >
+              {/* Output respective icon conditionally */}
+              {isFunFactOpen ? (
+                // When opened, display minus symbol
+                <Minus className="w-6 h-6 text-white" />
+              ) : (
+                // When collapsed, display plus symbol
+                <Plus className="w-6 h-6 text-white" />
+              )}
+              {/* Close expansion indicator wrapper */}
+            </motion.div>
+            {/* Close clickable button wrapping header logic */}
+          </button>
+          
+          {/* Framer motion animate presence controller for mounting and unmounting details */}
+          <AnimatePresence initial={false}>
+            {/* Conditional validation against active state hooks */}
+            {isFunFactOpen && (
+              // Collapse motion div dictating height constraints natively and gracefully clipping
+              <motion.div
+                // Rest and initialization bounds
+                initial={{ height: 0, opacity: 0 }}
+                // Terminal rendering layout constraints
+                animate={{ height: 'auto', opacity: 1 }}
+                // Unmount shrinkage instructions 
+                exit={{ height: 0, opacity: 0 }}
+                // Core transition speed timings 
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                // Overflow clipping explicitly 
+                className="overflow-hidden"
+              >
+                {/* Standard padding box surrounding descriptive content text. Removing top padding seamlessly aligns to title block spacing. */}
+                <div className="px-6 md:px-8 pb-5 md:pb-6 pt-0">
+                  {/* Paragraph rendering details */}
+                  <p
+                    // Description font weights fading purely optical
+                    className="text-white/90 leading-relaxed max-w-4xl"
+                    // Body typography ruleset
+                    style={{ fontFamily: 'Inter, sans-serif' }}
+                  >
+                    {/* Detail text fragment with line breaks explicitly encoded natively to HTML for bypassing formatter overrides */}
+                    V TCM sa ucho často prirovnáva k obrátenému plodu v maternici.<br />
+                    <span className="hidden sm:inline">* </span>Ušný lalôčik → hlava a mozog<br />
+                    <span className="hidden sm:inline">* </span>Stredná časť ucha → vnútorné orgány (srdce, pľúca, žalúdok)<br />
+                    <span className="hidden sm:inline">* </span>Horná časť ucha → nohy a dolná časť tela<br />
+                    Stimulácia týchto bodov má pomáhať ovplyvňovať príslušné orgány. A krása už je bonus :)
+                    {/* Close details fragment */}
+                  </p>
+                  {/* Close container layout */}
+                </div>
+                {/* Close motion block constraints */}
+              </motion.div>
+            )}
+            {/* Close framer motion logic condition wrapper */}
+          </AnimatePresence>
+          {/* Close main motion wrapper for FUN FACT container */}
+        </motion.div>
+
         {/* Close max width aligned container */}
       </div>
-      {/* Close main top level section */}
     </section>
     // Close the parent return block
   );
